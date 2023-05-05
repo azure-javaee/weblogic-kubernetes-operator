@@ -271,7 +271,7 @@ class ItDiagnosticsFailedCondition {
           patch, V1Patch.PATCH_FORMAT_JSON_PATCH), "Failed to patch cluster");
 
       //check the desired completed, available and failed statuses
-      checkStatus(domainName, "True", "True", "False");
+      checkStatus(domainName, "True", "True", null);
       testPassed = true;
     } finally {
       if (!testPassed) {
@@ -307,7 +307,7 @@ class ItDiagnosticsFailedCondition {
       createDomainAndVerify(domain, domainNamespace);
 
       //check the desired completed, available and failed statuses
-      checkStatus(domainName, "True", "True", "False");
+      checkStatus(domainName, "True", "True", null);
 
       String patchStr = "[{\"op\": \"replace\", "
           + "\"path\": \"/spec/webLogicCredentialsSecret/name\", \"value\": \"weblogic-credentials-foo\"}]";
@@ -335,7 +335,7 @@ class ItDiagnosticsFailedCondition {
           "patchDomainCustomResource failed");
 
       //check the desired completed, available and failed statuses
-      checkStatus(domainName, "True", "True", "False");
+      checkStatus(domainName, "True", "True", null);
 
       testPassed = true;
     } finally {
