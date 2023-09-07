@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: '0 0 * * 5'
   workflow_dispatch:
+    inputs:
+      sleepTime:
+        description: 'Specify how many minutes to pause.'
+        required: false
+        default: '20'
 
 jobs:
   build:
